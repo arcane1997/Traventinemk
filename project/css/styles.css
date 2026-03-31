@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #f7f7f7;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    background: transparent;   /* Make buttons transparent */
+}
+
+header ul li a.active,
+header ul li a:hover {
+    background: #f4b41a;      /* Show color on hover/active */
+    color: #000;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-text .btn {
+    padding: 12px 25px;
+    background: #f4b41a;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.hero-text .btn:hover {
+    background: #e6a300;
+    transform: scale(1.05);
+}
+
+/* Products & Projects Grid */
+.product-grid, .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.product-card, .project-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+}
+
+.product-card img, .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3, .project-card h3 {
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.product-card:hover, .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* About Page */
+.about p {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Contact Page */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.contact input,
+.contact textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.contact button {
+    padding: 12px;
+    background: #f4b41a;
+    color: #000;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact button:hover {
+    background: #e6a300;
+    transform: scale(1.03);
+}
+
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .product-card, .project-card {
+        width: 90%;
+    }
+}

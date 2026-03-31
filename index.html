@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travertine MK - Home</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+body { color:#222; scroll-behavior: smooth; }
+
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background: rgba(255,255,255,0.1);
+    color:white;
+}
+header h1 { font-weight:400; letter-spacing:2px; }
+nav a { margin-left:30px; text-decoration:none; color:white; font-weight:500; transition:0.3s; }
+nav a:hover { color:#f0f0f0; }
+
+/* HERO */
+.hero {
+    height:100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('images/product1.jpeg') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+.hero h2 {
+    font-size:48px;
+    color:white;
+    margin-bottom:10px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.6);
+}
+.hero p {
+    font-size:20px;
+    color:white;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+    margin-bottom:30px;
+}
+.hero .scroll-down {
+    position:absolute;
+    bottom:30px;
+    font-size:16px;
+    color:white;
+    animation: bounce 2s infinite;
+    cursor:pointer;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* FOOTER */
+.footer { background:#111; color:white; padding:40px; text-align:center; margin-top:40px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>TRAVERTINE MK</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Chancery Lane — London — Bennetts Associates</h2>
+    <p>Premium Travertine for Modern Architecture</p>
+    <div class="scroll-down">&#x2193;</div>
+</section>
+
+<div class="footer">© 2026 Travertine MK — All rights reserved</div>
+</body>
+</html>
