@@ -19,17 +19,27 @@ header {
     top:0;
     z-index:1000;
     background: rgba(255,255,255,0.1);
-    color:white;
 }
-header h1 { font-weight:400; letter-spacing:2px; }
-nav a { margin-left:30px; text-decoration:none; color:white; font-weight:500; transition:0.3s; }
-nav a:hover { color:#f0f0f0; }
+header h1 { font-weight:400; letter-spacing:2px; color:white; }
+nav a { 
+    margin-left:30px; 
+    text-decoration:none; 
+    color:white; 
+    font-weight:500; 
+    padding:8px 15px; 
+    border: 2px solid transparent;
+    border-radius:5px;
+    transition:0.3s; 
+}
+nav a:hover { 
+    background: rgba(255,255,255,0.2); 
+}
 
 /* HERO */
 .hero {
     height:100vh;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('images/product1.jpeg') center/cover no-repeat;
+                url('project/images/product1.jpg') center/cover no-repeat;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -64,7 +74,13 @@ nav a:hover { color:#f0f0f0; }
 }
 
 /* FOOTER */
-.footer { background:#111; color:white; padding:40px; text-align:center; margin-top:40px; }
+.footer { 
+    background:#111; 
+    color:white; 
+    padding:40px; 
+    text-align:center; 
+    margin-top:40px; 
+}
 </style>
 </head>
 <body>
@@ -80,11 +96,42 @@ nav a:hover { color:#f0f0f0; }
 </header>
 
 <section class="hero">
-    <h2>Chancery Lane — London — Bennetts Associates</h2>
-    <p>Premium Travertine for Modern Architecture</p>
+    <img id="heroImage" src="project/images/product1.jpg" alt="Travertine">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h2>Chancery Lane — London — Bennetts Associates</h2>
+        <p>Premium Travertine for Modern Architecture</p>
+    </div>
+
     <div class="scroll-down">&#x2193;</div>
 </section>
 
 <div class="footer">© 2026 Travertine MK — All rights reserved</div>
+<script>
+    const images = [
+        "project/images/product1.jpg",
+        "project/images/product2.jpg",
+        "project/images/product3.jpg",
+        "project/images/product4.jpg"
+    ];
+
+    let index = 0;
+    const heroImage = document.getElementById("heroImage");
+
+    setInterval(() => {
+        heroImage.style.opacity = 0;
+
+        setTimeout(() => {
+            index = (index + 1) % images.length;
+            heroImage.src = images[index];
+            heroImage.style.opacity = 1;
+        }, 500);
+
+    }, 5000);
+    </script>
+
 </body>
 </html>
+
