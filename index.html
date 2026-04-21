@@ -8,7 +8,6 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
 body { color:#222; scroll-behavior: smooth; }
 
-/* HEADER */
 header {
     display:flex;
     justify-content:space-between;
@@ -21,21 +20,22 @@ header {
     background: rgba(255,255,255,0.1);
 }
 header h1 { font-weight:400; letter-spacing:2px; color:white; }
-nav a { 
-    margin-left:30px; 
-    text-decoration:none; 
-    color:white; 
-    font-weight:500; 
-    padding:8px 15px; 
+nav a {
+    margin-left:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    padding:8px 15px;
     border: 2px solid transparent;
     border-radius:5px;
-    transition:0.3s; 
+    transition:0.3s;
 }
-nav a:hover { 
-    background: rgba(255,255,255,0.2); 
+nav a:hover,
+nav a.active {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.35);
 }
 
-/* HERO */
 .hero {
     height:100vh;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
@@ -67,19 +67,35 @@ nav a:hover {
     animation: bounce 2s infinite;
     cursor:pointer;
 }
+#heroImage {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition: opacity 0.5s ease;
+}
+.overlay {
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.35);
+}
+.hero-content {
+    position:relative;
+    z-index:1;
+    padding:0 20px;
+}
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-10px); }
     60% { transform: translateY(-5px); }
 }
-
-/* FOOTER */
-.footer { 
-    background:#111; 
-    color:white; 
-    padding:40px; 
-    text-align:center; 
-    margin-top:40px; 
+.footer {
+    background:#111;
+    color:white;
+    padding:40px;
+    text-align:center;
+    margin-top:40px;
 }
 </style>
 </head>
@@ -88,50 +104,45 @@ nav a:hover {
 <header>
     <h1>TRAVERTINE MK</h1>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="Products.html">Products</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
     <img id="heroImage" src="project/images/product1.jpg" alt="Travertine">
-
     <div class="overlay"></div>
-
     <div class="hero-content">
         <h2>Chancery Lane — London — Bennetts Associates</h2>
         <p>Premium Travertine for Modern Architecture</p>
     </div>
-
     <div class="scroll-down">&#x2193;</div>
 </section>
 
 <div class="footer">© 2026 Travertine MK — All rights reserved</div>
 <script>
-    const images = [
-        "project/images/product1.jpg",
-        "project/images/product2.jpg",
-        "project/images/product3.jpg",
-        "project/images/product4.jpg"
-    ];
+const images = [
+    "project/images/product1.jpg",
+    "project/images/product2.jpg",
+    "project/images/product3.jpg",
+    "project/images/product4.jpg"
+];
 
-    let index = 0;
-    const heroImage = document.getElementById("heroImage");
+let index = 0;
+const heroImage = document.getElementById("heroImage");
 
-    setInterval(() => {
-        heroImage.style.opacity = 0;
+setInterval(() => {
+    heroImage.style.opacity = 0;
 
-        setTimeout(() => {
-            index = (index + 1) % images.length;
-            heroImage.src = images[index];
-            heroImage.style.opacity = 1;
-        }, 500);
-
-    }, 5000);
-    </script>
+    setTimeout(() => {
+        index = (index + 1) % images.length;
+        heroImage.src = images[index];
+        heroImage.style.opacity = 1;
+    }, 500);
+}, 5000);
+</script>
 
 </body>
 </html>
-
