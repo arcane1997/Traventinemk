@@ -16,12 +16,25 @@ header {
     width:100%;
     top:0;
     z-index:1000;
-    background: rgba(255,255,255,0.1);
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
-header h1 { color:white; font-weight:400; letter-spacing:2px; }
-nav a { margin-left:30px; text-decoration:none; color:white; font-weight:500; padding:8px 15px; border:2px solid transparent; border-radius:5px; transition:0.3s; }
-nav a:hover { background: rgba(255,255,255,0.2); }
-
+header h1 { color:#222; font-weight:400; letter-spacing:2px; }
+nav a {
+    margin-left:30px;
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    padding:8px 15px;
+    border:2px solid transparent;
+    border-radius:5px;
+    transition:0.3s;
+}
+nav a:hover,
+nav a.active {
+    background: rgba(0,0,0,0.06);
+    border-color: rgba(0,0,0,0.12);
+}
 .contact-section {
     display:flex;
     flex-wrap: wrap;
@@ -32,41 +45,34 @@ nav a:hover { background: rgba(255,255,255,0.2); }
     overflow:hidden;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
-
 .contact-text {
     flex:1;
     padding:50px;
 }
-
 .contact-text h2 {
     font-size:32px;
     margin-bottom:20px;
 }
-
 .contact-text p, .contact-text a {
     font-size:18px;
     margin-bottom:10px;
     color:#222;
     text-decoration:none;
 }
-
 .contact-text a:hover {
     text-decoration: underline;
 }
-
 .contact-image {
     flex:1;
     min-width:300px;
     max-height:500px;
     overflow:hidden;
 }
-
 .contact-image img {
     width:100%;
     height:100%;
     object-fit:cover;
 }
-
 .footer {
     text-align:center;
     padding:40px;
@@ -77,17 +83,15 @@ nav a:hover { background: rgba(255,255,255,0.2); }
 </style>
 </head>
 <body>
-
 <header>
     <h1>TRAVERTINE MK</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+        <a href="Products.html">Products</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html" class="active">Contact</a>
     </nav>
 </header>
-
 <section class="contact-section">
     <div class="contact-text">
         <h2>Contact</h2>
@@ -102,7 +106,6 @@ nav a:hover { background: rgba(255,255,255,0.2); }
         <img src="project/images/contact-image.jpg" alt="Travertine Contact">
     </div>
 </section>
-
 <div class="footer">© 2026 Travertine MK — All rights reserved</div>
 </body>
 </html>
